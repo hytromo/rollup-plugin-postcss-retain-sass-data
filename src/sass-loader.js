@@ -32,7 +32,7 @@ export default {
         render({
           ...this.options,
           file: this.id,
-          data: this.options.code ? this.options.code + code : code,
+          data: this.options.data ? this.options.data + code : code,
           indentedSyntax: /\.sass$/.test(this.id),
           sourceMap: this.sourceMap,
           importer: [
