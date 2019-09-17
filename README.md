@@ -1,6 +1,20 @@
 # rollup-plugin-postcss-retain-sass-data
 
-Based on https://github.com/egoist/rollup-plugin-postcss
+Based on https://github.com/egoist/rollup-plugin-postcss but with the ability to import global scss variables through node-sass options:
+
+```
+postcss({
+  extract: false,
+  modules: true,
+  use: [
+    ['sass', {
+      data: '@import "./semantic-variables.scss";',
+      includePaths: [path.join(__dirname, 'src')]
+    }]
+  ],
+  extensions: ['.scss'],
+}),
+```
 
 [![NPM version](https://img.shields.io/npm/v/rollup-plugin-postcss.svg?style=flat)](https://npmjs.com/package/rollup-plugin-postcss) [![NPM downloads](https://img.shields.io/npm/dm/rollup-plugin-postcss.svg?style=flat)](https://npmjs.com/package/rollup-plugin-postcss) [![Build Status](https://img.shields.io/circleci/project/egoist/rollup-plugin-postcss/master.svg?style=flat)](https://circleci.com/gh/egoist/rollup-plugin-postcss) [![codecov](https://codecov.io/gh/egoist/rollup-plugin-postcss/branch/master/graph/badge.svg)](https://codecov.io/gh/egoist/rollup-plugin-postcss)
  [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/egoist/donate)
